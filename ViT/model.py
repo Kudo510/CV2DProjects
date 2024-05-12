@@ -90,6 +90,7 @@ class MyViT(nn.Module):
         
         #Divide image in 7 * 7 patches so from  input (N, 1, 28, 28) to:  = (N, 7x7, 4x4) = (N, 49, 16)  - from (N,C,H,W) to (N, P², HWC/P²)
         #see which means that HWC mus be divisible to P² as well as H,W must be divisible to P- what is wahy we have assert lb
+        # import pdb; pdb.set_trace()
         # Input and patches sizes
         assert chw[1] % n_patches == 0, "Input shape not entirely divisible by number of patches" 
         assert chw[2] % n_patches == 0, "Input shape not entirely divisible by number of patches"
